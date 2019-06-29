@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TFAlgoritmosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TFAlgoritmosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Destino" EntityType="TFAlgoritmosModel.Destino" />
+    <EntitySet Name="Origen" EntityType="TFAlgoritmosModel.Origen" />
+    <EntitySet Name="Origen_Destino" EntityType="TFAlgoritmosModel.Origen_Destino" />
+    <EntitySet Name="Padron_Destino" EntityType="TFAlgoritmosModel.Padron_Destino" />
+    <EntitySet Name="Padron_Origen" EntityType="TFAlgoritmosModel.Padron_Origen" />
+    <EntitySet Name="Padron_Origen_Destino" EntityType="TFAlgoritmosModel.Padron_Origen_Destino" />
+    <AssociationSet Name="FK__Padron_Or__Desti__1FCDBCEB" Association="TFAlgoritmosModel.FK__Padron_Or__Desti__1FCDBCEB">
+      <End Role="Padron_Destino" EntitySet="Padron_Destino" />
+      <End Role="Padron_Origen_Destino" EntitySet="Padron_Origen_Destino" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Padron_Or__Orige__1ED998B2" Association="TFAlgoritmosModel.FK__Padron_Or__Orige__1ED998B2">
+      <End Role="Padron_Origen" EntitySet="Padron_Origen" />
+      <End Role="Padron_Origen_Destino" EntitySet="Padron_Origen_Destino" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Destino">
+    <Key>
+      <PropertyRef Name="COD_CE" />
+    </Key>
+    <Property Name="COD_CE" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE_CE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PUEBLO_CE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X_LONGITUD" Type="Double" Nullable="false" />
+    <Property Name="Y_LATITUD" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Origen">
+    <Key>
+      <PropertyRef Name="COD_CE" />
+    </Key>
+    <Property Name="COD_CE" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE_CE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PUEBLO_CE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X_LONGITUD" Type="Double" Nullable="false" />
+    <Property Name="Y_LATITUD" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Origen_Destino">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="OrigenId" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DestinoId" Type="Int32" Nullable="false" />
+    <Property Name="Distancia" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Padron_Destino">
+    <Key>
+      <PropertyRef Name="COD_CEPA" />
+    </Key>
+    <Property Name="COD_CEPA" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NIVEL_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FORMAS_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DIRECCION_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SUPERVISOR_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PUEBLO_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X" Type="Double" Nullable="false" />
+    <Property Name="Y" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Padron_Origen_Destino" Relationship="TFAlgoritmosModel.FK__Padron_Or__Desti__1FCDBCEB" FromRole="Padron_Destino" ToRole="Padron_Origen_Destino" />
+  </EntityType>
+  <EntityType Name="Padron_Origen">
+    <Key>
+      <PropertyRef Name="COD_CEPA" />
+    </Key>
+    <Property Name="COD_CEPA" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NIVEL_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FORMAS_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DIRECCION_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SUPERVISOR_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PUEBLO_CEPA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="X" Type="Double" Nullable="false" />
+    <Property Name="Y" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Padron_Origen_Destino" Relationship="TFAlgoritmosModel.FK__Padron_Or__Orige__1ED998B2" FromRole="Padron_Origen" ToRole="Padron_Origen_Destino" />
+  </EntityType>
+  <EntityType Name="Padron_Origen_Destino">
+    <Key>
+      <PropertyRef Name="OrigenId" />
+      <PropertyRef Name="DestinoId" />
+    </Key>
+    <Property Name="OrigenId" Type="Int32" Nullable="false" />
+    <Property Name="DestinoId" Type="Int32" Nullable="false" />
+    <Property Name="Distancia" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Padron_Destino" Relationship="TFAlgoritmosModel.FK__Padron_Or__Desti__1FCDBCEB" FromRole="Padron_Origen_Destino" ToRole="Padron_Destino" />
+    <NavigationProperty Name="Padron_Origen" Relationship="TFAlgoritmosModel.FK__Padron_Or__Orige__1ED998B2" FromRole="Padron_Origen_Destino" ToRole="Padron_Origen" />
+  </EntityType>
+  <Association Name="FK__Padron_Or__Desti__1FCDBCEB">
+    <End Type="TFAlgoritmosModel.Padron_Destino" Role="Padron_Destino" Multiplicity="1" />
+    <End Type="TFAlgoritmosModel.Padron_Origen_Destino" Role="Padron_Origen_Destino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padron_Destino">
+        <PropertyRef Name="COD_CEPA" />
+      </Principal>
+      <Dependent Role="Padron_Origen_Destino">
+        <PropertyRef Name="DestinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Padron_Or__Orige__1ED998B2">
+    <End Type="TFAlgoritmosModel.Padron_Origen" Role="Padron_Origen" Multiplicity="1" />
+    <End Type="TFAlgoritmosModel.Padron_Origen_Destino" Role="Padron_Origen_Destino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padron_Origen">
+        <PropertyRef Name="COD_CEPA" />
+      </Principal>
+      <Dependent Role="Padron_Origen_Destino">
+        <PropertyRef Name="OrigenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

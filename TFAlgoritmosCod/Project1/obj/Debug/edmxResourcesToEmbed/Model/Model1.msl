@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TFAlgoritmosContextStoreContainer" CdmEntityContainer="TFAlgoritmosEntities">
+    <EntitySetMapping Name="Destino">
+      <EntityTypeMapping TypeName="TFAlgoritmosContext.Destino">
+        <MappingFragment StoreEntitySet="Destino">
+          <ScalarProperty Name="COD_CE" ColumnName="COD_CE" />
+          <ScalarProperty Name="NOMBRE_CE" ColumnName="NOMBRE_CE" />
+          <ScalarProperty Name="PUEBLO_CE" ColumnName="PUEBLO_CE" />
+          <ScalarProperty Name="X_LONGITUD" ColumnName="X_LONGITUD" />
+          <ScalarProperty Name="Y_LATITUD" ColumnName="Y_LATITUD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Origen">
+      <EntityTypeMapping TypeName="TFAlgoritmosContext.Origen">
+        <MappingFragment StoreEntitySet="Origen">
+          <ScalarProperty Name="COD_CE" ColumnName="COD_CE" />
+          <ScalarProperty Name="NOMBRE_CE" ColumnName="NOMBRE_CE" />
+          <ScalarProperty Name="PUEBLO_CE" ColumnName="PUEBLO_CE" />
+          <ScalarProperty Name="X_LONGITUD" ColumnName="X_LONGITUD" />
+          <ScalarProperty Name="Y_LATITUD" ColumnName="Y_LATITUD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Origen_Destino">
+      <EntityTypeMapping TypeName="TFAlgoritmosContext.Origen_Destino">
+        <MappingFragment StoreEntitySet="Origen_Destino">
+          <ScalarProperty Name="OrigenId" ColumnName="OrigenId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
+          <ScalarProperty Name="Distancia" ColumnName="Distancia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Padron_Destino">
+      <EntityTypeMapping TypeName="TFAlgoritmosContext.Padron_Destino">
+        <MappingFragment StoreEntitySet="Padron_Destino">
+          <ScalarProperty Name="COD_CEPA" ColumnName="COD_CEPA" />
+          <ScalarProperty Name="NOMBRE_CEPA" ColumnName="NOMBRE_CEPA" />
+          <ScalarProperty Name="NIVEL_CEPA" ColumnName="NIVEL_CEPA" />
+          <ScalarProperty Name="FORMAS_CEPA" ColumnName="FORMAS_CEPA" />
+          <ScalarProperty Name="DIRECCION_CEPA" ColumnName="DIRECCION_CEPA" />
+          <ScalarProperty Name="SUPERVISOR_CEPA" ColumnName="SUPERVISOR_CEPA" />
+          <ScalarProperty Name="PUEBLO_CEPA" ColumnName="PUEBLO_CEPA" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Padron_Origen">
+      <EntityTypeMapping TypeName="TFAlgoritmosContext.Padron_Origen">
+        <MappingFragment StoreEntitySet="Padron_Origen">
+          <ScalarProperty Name="COD_CEPA" ColumnName="COD_CEPA" />
+          <ScalarProperty Name="NOMBRE_CEPA" ColumnName="NOMBRE_CEPA" />
+          <ScalarProperty Name="NIVEL_CEPA" ColumnName="NIVEL_CEPA" />
+          <ScalarProperty Name="FORMAS_CEPA" ColumnName="FORMAS_CEPA" />
+          <ScalarProperty Name="DIRECCION_CEPA" ColumnName="DIRECCION_CEPA" />
+          <ScalarProperty Name="SUPERVISOR_CEPA" ColumnName="SUPERVISOR_CEPA" />
+          <ScalarProperty Name="PUEBLO_CEPA" ColumnName="PUEBLO_CEPA" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Padron_Origen_Destino">
+      <EntityTypeMapping TypeName="TFAlgoritmosContext.Padron_Origen_Destino">
+        <MappingFragment StoreEntitySet="Padron_Origen_Destino">
+          <ScalarProperty Name="OrigenId" ColumnName="OrigenId" />
+          <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
+          <ScalarProperty Name="Distancia" ColumnName="Distancia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

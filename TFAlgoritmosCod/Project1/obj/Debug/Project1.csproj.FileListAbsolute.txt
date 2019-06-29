@@ -1,0 +1,14 @@
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.csprojAssemblyReference.cache
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.Form1.resources
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.csproj.GenerateResource.cache
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.csproj.CoreCompileInputs.cache
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\Project1.exe.config
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\Project1.exe
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\Project1.pdb
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\EntityFramework.dll
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\EntityFramework.xml
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.csproj.CopyComplete
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.exe
+C:\Users\Core i7\source\repos\TFAlgoritmosCod\Project1\obj\Debug\Project1.pdb

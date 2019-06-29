@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7b241e184464bdb88dfaa802d806db3" Name="Diagram1">
+        <EntityTypeShape EntityType="TFAlgoritmosContext.Destino" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TFAlgoritmosContext.Origen" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TFAlgoritmosContext.Origen_Destino" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFAlgoritmosContext.Padron_Destino" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="TFAlgoritmosContext.Padron_Origen" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="TFAlgoritmosContext.Padron_Origen_Destino" Width="1.5" PointX="3" PointY="1.5" />
+        <AssociationConnector Association="TFAlgoritmosContext.FK__Padron_Or__Desti__1FCDBCEB" />
+        <AssociationConnector Association="TFAlgoritmosContext.FK__Padron_Or__Orige__1ED998B2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

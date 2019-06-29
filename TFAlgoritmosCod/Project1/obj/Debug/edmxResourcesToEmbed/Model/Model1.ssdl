@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TFAlgoritmosContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Destino">
+    <Key>
+      <PropertyRef Name="COD_CE" />
+    </Key>
+    <Property Name="COD_CE" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_CE" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUEBLO_CE" Type="nvarchar" MaxLength="255" />
+    <Property Name="X_LONGITUD" Type="float" Nullable="false" />
+    <Property Name="Y_LATITUD" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Origen">
+    <Key>
+      <PropertyRef Name="COD_CE" />
+    </Key>
+    <Property Name="COD_CE" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_CE" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUEBLO_CE" Type="nvarchar" MaxLength="255" />
+    <Property Name="X_LONGITUD" Type="float" Nullable="false" />
+    <Property Name="Y_LATITUD" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Origen_Destino">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="OrigenId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DestinoId" Type="int" Nullable="false" />
+    <Property Name="Distancia" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Padron_Destino">
+    <Key>
+      <PropertyRef Name="COD_CEPA" />
+    </Key>
+    <Property Name="COD_CEPA" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="NIVEL_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="FORMAS_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="DIRECCION_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="SUPERVISOR_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUEBLO_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="X" Type="float" Nullable="false" />
+    <Property Name="Y" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Padron_Origen">
+    <Key>
+      <PropertyRef Name="COD_CEPA" />
+    </Key>
+    <Property Name="COD_CEPA" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="NIVEL_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="FORMAS_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="DIRECCION_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="SUPERVISOR_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUEBLO_CEPA" Type="nvarchar" MaxLength="255" />
+    <Property Name="X" Type="float" Nullable="false" />
+    <Property Name="Y" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Padron_Origen_Destino">
+    <Key>
+      <PropertyRef Name="OrigenId" />
+      <PropertyRef Name="DestinoId" />
+    </Key>
+    <Property Name="OrigenId" Type="int" Nullable="false" />
+    <Property Name="DestinoId" Type="int" Nullable="false" />
+    <Property Name="Distancia" Type="float" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Padron_Or__Desti__1FCDBCEB">
+    <End Role="Padron_Destino" Type="Self.Padron_Destino" Multiplicity="1" />
+    <End Role="Padron_Origen_Destino" Type="Self.Padron_Origen_Destino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padron_Destino">
+        <PropertyRef Name="COD_CEPA" />
+      </Principal>
+      <Dependent Role="Padron_Origen_Destino">
+        <PropertyRef Name="DestinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Padron_Or__Orige__1ED998B2">
+    <End Role="Padron_Origen" Type="Self.Padron_Origen" Multiplicity="1" />
+    <End Role="Padron_Origen_Destino" Type="Self.Padron_Origen_Destino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Padron_Origen">
+        <PropertyRef Name="COD_CEPA" />
+      </Principal>
+      <Dependent Role="Padron_Origen_Destino">
+        <PropertyRef Name="OrigenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TFAlgoritmosContextStoreContainer">
+    <EntitySet Name="Destino" EntityType="Self.Destino" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Origen" EntityType="Self.Origen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Origen_Destino" EntityType="Self.Origen_Destino" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Padron_Destino" EntityType="Self.Padron_Destino" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Padron_Origen" EntityType="Self.Padron_Origen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Padron_Origen_Destino" EntityType="Self.Padron_Origen_Destino" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Padron_Or__Desti__1FCDBCEB" Association="Self.FK__Padron_Or__Desti__1FCDBCEB">
+      <End Role="Padron_Destino" EntitySet="Padron_Destino" />
+      <End Role="Padron_Origen_Destino" EntitySet="Padron_Origen_Destino" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Padron_Or__Orige__1ED998B2" Association="Self.FK__Padron_Or__Orige__1ED998B2">
+      <End Role="Padron_Origen" EntitySet="Padron_Origen" />
+      <End Role="Padron_Origen_Destino" EntitySet="Padron_Origen_Destino" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
